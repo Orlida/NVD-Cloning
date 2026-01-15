@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloning_Test</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        @keyframes progressBar {
+            from{
+                width: 0%;
+            }
+            to{
+                width: 100%
+            }
+        }
+
+        @keyframes fadeIn {
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+
+        @keyframes fadeOut {
+            from{opacity: 1;}
+            to{opacity: 0;}
+        }
+
+        .fadeInAnimation{
+            animation: fadeIn 500ms linear forwards;
+        }
+
+        .fadeOutAnimation{
+            animation: fadeOut 500ms linear forwards;    
+        }
+
+        .run-loading {
+            animation: progressBar 7000ms linear;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="z-1000 fixed top-0 w-full bg-white m-auto">
+        <nav class="relative flex h-[45] justify-between max-w-[1290px] ml-[calc((100vw-1290px)/2)]">
+            <div class="flex">
+                <div class="flex items-center w-[135px] h-[44px]">
+                    <a href="/dist/index.html">
+                        <img src="/image/nvidia.png" alt="" class="w-[117px] h-[35px] object-cover">
+                    </a>
+                </div>
+                <ul class="flex">
+                    <li class="nav-left">Products</li>
+                    <li class="nav-left">Solutions</li>
+                    <li class="nav-left">Industires</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="flex items-center">
+                    <li class="nav-right">Shop</li>
+                    <li class="nav-right">Drivers</li>
+                    <li class="nav-right ">Support</li>
+                    <li>
+                        <a href="">
+                            <img src="/image/search.png" alt="" class="icon-nav-right ml-10">
+                        </a>
+                    </li>
+                    <li class="ml-2.5">
+                        <a href="">
+                            <img src="/image/earth.png" alt="" class="icon-nav-right">
+                        </a>
+                    </li>
+                    <li class="ml-2.5">
+                        <a id="signInButton" href="#">
+                            <div class="flex">
+                                <img src="/image/user.png" alt="" class="icon-nav-right">
+                                <span class="ml-2">Sign In</span>
+                            </div>       
+                        </a>
+                        <div id="effectSignIn1" class="absolute top-[42px] bg-[#76b900] w-[80.55px] h-[2px] hidden"></div>
+                        <div id="effectSignIn2" class="absolute right-[0px] top-[60px] w-[300px] h-[100px] bg-white hidden">
+                            <div class="h-[50px] flex items-center hover:bg-black/10 duration-100 linear">
+                                <a href="/dist/auth/signIn.html">
+                                    <div class="flex items-center my-[13px]">
+                                        <img src="/image/user.png" alt="" class="ml-2.5 w-4 h-4">
+                                        <span class="ml-2.5 text-[16px] font-light">NVIDIA Account</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="h-[50px] flex items-center hover:bg-black/10 duration-100 linear">
+                                <a href="#">
+                                    <div class="flex items-center my-[13px]">
+                                        <img src="/image/homepagepic/store.png" alt="" class="ml-2.5 w-4 h-4">
+                                        <span class="ml-2.5 text-[16px] font-light">NVIDIA marketplace</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <section class="bg-black relative">
+        <div class="w-full">
+            <div class="relative max-w-[1290px] mx-auto h-[770px]">
+                <div>
+                    <img id="imageHomepage" src="../image/homepagepic/t1.jpg" alt="" 
+                    class="absolute left-1/2 top-0 -translate-x-1/2 max-w-none w-[2560px] h-[770px] object-cover opacity-0">
+                    <img id="imageHomepage" src="../image/homepagepic/t2.jpg" alt="" 
+                    class="absolute left-1/2 top-0 -translate-x-1/2 max-w-none w-[2560px] h-[770px] object-cover opacity-0">
+                    <img id="imageHomepage" src="../image/homepagepic/t3.jpg" alt="" 
+                    class="absolute left-1/2 top-0 -translate-x-1/2 max-w-none w-[2560px] h-[770px] object-cover opacity-0">
+                    <img id="imageHomepage" src="../image/homepagepic/t4.jpg" alt="" 
+                    class="absolute left-1/2 top-0 -translate-x-1/2 max-w-none w-[2560px] h-[770px] object-cover opacity-0">
+                    <img id="imageHomepage" src="../image/homepagepic/t5.jpg" alt="" 
+                    class="absolute left-1/2 top-0 -translate-x-1/2 max-w-none w-[2560px] h-[770px] object-cover opacity-0">
+                    <img id="imageHomepage" src="../image/homepagepic/t6.jpg" alt="" 
+                    class="absolute left-1/2 top-0 -translate-x-1/2 max-w-none w-[2560px] h-[770px] object-cover opacity-0">
+                </div>
+                <div class="absolute top-0 text-white z-10 h-full pt-25 ml-2.5"> 
+                    <div id="contextHomepage" class="opacity-0">
+                        <p class="font-bold text-[25px] py-2">Automative</p>
+                        <div class="w-[520px]">
+                            <h2 class="font-bold text-5xl leading-tight">OpenUSD and NVIDIA Halos Accelerate Physical AI Systems</h2>
+                        </div>
+                        <div class="w-[520px] mt-4">
+                            <p class="text-2xl leading-10">New NVIDIA open datasets, safety frameworks, and technologies are advancing how developers build safe physical AI.</p>
+                        </div>
+                        <div class="py-[15px] mt-4 mb-20">
+                            <a href="/" class="inline-block">
+                                <p class="bg-[#76b900] px-[13px] py-[15px] font-bold text-black">Read Blog</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-3.75 w-[1290px] h-[100px]">
+                        <ul class="flex justify-between">
+                            <li class="homepage-card-container">
+                                <div id="progressBar" class="w-[190px] h-1 bg-white/20 overflow-hidden">
+                                    <div class="progress-fill bg-[#76b900] h-full"></div>
+                                </div>
+                                <div id="contextProgressBar" class="opacity-60">
+                                    <p class="mt-3.75 text-[10px]">Automative</p>
+                                    <p class="mt-2.5">OpenUSD and NVIDIA Halos Accelerate Physical...</p>
+                                </div>
+                            </li>
+                            <li class="homepage-card-container">
+                                <div id="progressBar" class="w-[190px] h-1 bg-white/20 overflow-hidden">
+                                    <div id="activeProgressBox" class="progress-fill h-full"></div>
+                                </div>
+                                <div class="opacity-60" id="contextProgressBar">
+                                    <p class="mt-3.75 text-[10px]">Agentic AI</p>
+                                    <p class="mt-2.5">NVIDIA Unveils Nemotron 3 Family of Models for...</p>
+                                </div>
+                            </li>
+                            <li class="homepage-card-container">
+                                <div id="progressBar" class="w-[190px] h-1 bg-white/20 overflow-hidden">
+                                    <div id="activeProgressBox" class="progress-fill h-full"></div>
+                                </div>
+                                <div id="contextProgressBar" class="opacity-60">
+                                    <p class="mt-3.75 text-[10px]">Robotics</p>
+                                    <p class="mt-2.5">Make Your Robot's Holiday Wish Come True</p>
+                                </div>
+                            </li>
+                            <li class="homepage-card-container">
+                                <div id="progressBar" class="w-[190px] h-1 bg-white/20 overflow-hidden">
+                                    <div id="activeProgressBox" class="progress-fill h-full"></div>
+                                </div>
+                                <div id="contextProgressBar" class="opacity-60">
+                                    <p class="mt-3.75 text-[10px]">Data Center</p>
+                                    <p class="mt-2.5">Model Makers Use NVIDIA for the Next Generation...</p>
+                                </div>
+                            </li>
+                            <li class="homepage-card-container">
+                                <div id="progressBar" class="w-[190px] h-1 bg-white/20 overflow-hidden">
+                                    <div id="activeProgressBox" class="progress-fill h-full"></div>
+                                </div>
+                                <div id="contextProgressBar" class="opacity-60">
+                                    <p class="mt-3.75 text-[10px]">Artificial Intelligence</p>
+                                    <p class="mt-2.5">Mixture of Experts Powers Top Frontier Models 10x...</p>
+                                </div>
+                            </li>   
+                            <li class="homepage-card-container">
+                                <div id="progressBar" class="w-[190px] h-1 bg-white/20 overflow-hidden">
+                                    <div id="activeProgressBox" class="progress-fill h-full"></div>
+                                </div>
+                                <div id="contextProgressBar" class="opacity-60">
+                                    <p class="mt-3.75 text-[10px]">Data Center</p>
+                                    <p class="mt-2.5">NVIDIA and AWS Partner to Build Semi-Custom AI...</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ContextHomepage 2 -->
+
+                <div class="absolute top-0 text-white z-10 h-full pt-25 ml-2.5"> 
+                    <div id="contextHomepage" class="opacity-0">
+                        <p class="font-bold text-[25px] py-2">Agentic AI</p>
+                        <div class="w-[520px]">
+                            <h2 class="font-bold text-5xl leading-tight">NVIDIA Unveils Nemotron 3 Family of Models for Agentic AI</h2>
+                        </div>
+                        <div class="w-[520px] mt-4">
+                            <p class="text-2xl leading-10">The open, hybrid models deliver top efficiency and accuracy for complex, high-throughput applications.</p>
+                        </div>
+                        <div class="py-[15px] mt-4 mb-20">
+                            <a href="/" class="inline-block">
+                                <p class="bg-[#76b900] px-[13px] py-[15px] font-bold text-black">Read Press Release</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ContextHomepage 3 -->
+                
+                <div class="absolute top-0 text-white z-10 h-full pt-25 ml-2.5"> 
+                    <div id="contextHomepage" class="opacity-0">
+                        <p class="font-bold text-[25px] py-2">Agentic AI</p>
+                        <div class="w-[520px]">
+                            <h2 class="font-bold text-5xl leading-tight">NVIDIA Unveils Nemotron 3 Family of Models for Agentic AI</h2>
+                        </div>
+                        <div class="w-[520px] mt-4">
+                            <p class="text-2xl leading-10">The open, hybrid models deliver top efficiency and accuracy for complex, high-throughput applications.</p>
+                        </div>
+                        <div class="py-[15px] mt-4 mb-20">
+                            <a href="/" class="inline-block">
+                                <p class="bg-[#76b900] px-[13px] py-[15px] font-bold text-black">Read Press Release</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ContextHomepage 4 -->
+                
+                <div class="absolute top-0 text-white z-10 h-full pt-25 ml-2.5"> 
+                    <div id="contextHomepage" class="opacity-0">
+                        <p class="font-bold text-[25px] py-2">Agentic AI</p>
+                        <div class="w-[520px]">
+                            <h2 class="font-bold text-5xl leading-tight">NVIDIA Unveils Nemotron 3 Family of Models for Agentic AI</h2>
+                        </div>
+                        <div class="w-[520px] mt-4">
+                            <p class="text-2xl leading-10">The open, hybrid models deliver top efficiency and accuracy for complex, high-throughput applications.</p>
+                        </div>
+                        <div class="py-[15px] mt-4 mb-20">
+                            <a href="/" class="inline-block">
+                                <p class="bg-[#76b900] px-[13px] py-[15px] font-bold text-black">Read Press Release</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ContextHomepage 5 -->
+                
+                <div class="absolute top-0 text-white z-10 h-full pt-25 ml-2.5"> 
+                    <div id="contextHomepage" class="opacity-0">
+                        <p class="font-bold text-[25px] py-2">Agentic AI</p>
+                        <div class="w-[520px]">
+                            <h2 class="font-bold text-5xl leading-tight">NVIDIA Unveils Nemotron 3 Family of Models for Agentic AI</h2>
+                        </div>
+                        <div class="w-[520px] mt-4">
+                            <p class="text-2xl leading-10">The open, hybrid models deliver top efficiency and accuracy for complex, high-throughput applications.</p>
+                        </div>
+                        <div class="py-[15px] mt-4 mb-20">
+                            <a href="/" class="inline-block">
+                                <p class="bg-[#76b900] px-[13px] py-[15px] font-bold text-black">Read Press Release</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ContextHomepage 6 -->
+                
+                <div class="absolute top-0 text-white z-10 h-full pt-25 ml-2.5"> 
+                    <div id="contextHomepage" class="opacity-0">
+                        <p class="font-bold text-[25px] py-2">Agentic AI</p>
+                        <div class="w-[520px]">
+                            <h2 class="font-bold text-5xl leading-tight">NVIDIA Unveils Nemotron 3 Family of Models for Agentic AI</h2>
+                        </div>
+                        <div class="w-[520px] mt-4">
+                            <p class="text-2xl leading-10">The open, hybrid models deliver top efficiency and accuracy for complex, high-throughput applications.</p>
+                        </div>
+                        <div class="py-[15px] mt-4 mb-20">
+                            <a href="/" class="inline-block">
+                                <p class="bg-[#76b900] px-[13px] py-[15px] font-bold text-black">Read Press Release</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended For You Section Below -->
+
+        <div class="bg-[#222] h-[460px]">
+            <div id="top-container" class="max-w-[1290px] mx-auto flex justify-between items-end">
+                <div class="flex items-end">
+                    <p class="font-bold text-[40px] text-white mt-15">
+                        Recommended For You
+                    </p>
+                    <img src="../image/homepagepic/options.png" alt="" class="w-6 h-6 object-cover ml-4 mb-3">
+                </div>
+                <div class="mb-2">
+                    <span class="chevron-top-container ml-0 cursor-pointer">
+                        &#10094;
+                    </span>
+                    <span class="chevron-top-container cursor-pointer">
+                        &#10095;
+                    </span>
+                </div>
+            </div>
+
+            <!-- Teaser Card Container Below -->
+
+            <div id="teaser-card" class=" max-w-[1290px] mx-auto">
+                <ul class="flex -mr-[50vw] pr-[50vw]">
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                    <li class="teaser-card">
+                        <a href="/">
+                           <img src="../image/homepagepic/teaser1.jpg" alt="" class="img-teaser">
+                           <div class="pt-2.5 pl-3.75 bg-white h-[90px]">
+                                <p class="text-xs font-bold">Games | Hardware</p>
+                                <p class="text-md font-bold pt-2">Future Ready. Present Deals.</p>
+                           </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- General Container Below -->
+
+        <div id="general-container" class="bg-[#EEE] w-full h-[250px]">
+            <div class="flex max-w-[1290px] mx-auto pt-[30px]">
+                <img src="../image/homepagepic/nvdgtc.jpg" alt="" class="w-[110px] h-[110px]">
+                <div class="pl-[30px]">
+                    <p class="font-bold text-4xl">GTC 2026 Registration Is Now Open</p>
+                    <p class="w-[1070px] text-2xl pt-2.5 pb-1.75 leading-10">Join developers, researchers, and business leaders on March 16–19 as they come together to explore the next wave of AI innovation. Take advantage of the early rate and register by February 2 to save.</p>
+                    <a href="">
+                        <span class="font-bold text-xl">Get Your Pass Now</span>
+                        <span>&#10095;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anything wrong about tailwind -->
+
+    </section>
+
+    <!-- More Details Containers Below -->
+
+    <div id="more-details-containers" class="mx-auto mt-16 bg-white">
+        <div class="flex justify-between min-[1290px]:mx-[calc((100vw-1290px)/2)]">
+            <span class="font-bold text-3xl">Data Center and Cloud Computing</span>
+            <div class="mb-2">
+                <button onclick="scrollSlideLeft('carousel-cards-container-1')">
+                    <span class="chevron-top-container ml-0 cursor-pointer">
+                        &#10094;
+                    </span>
+                </button>
+                <button onclick="scrollSlideRight('carousel-cards-container-1')">
+                    <span class="chevron-top-container cursor-pointer">
+                        &#10095;
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Cards Container Below -->
+
+        <ul id="carousel-cards-container-1" class="flex py-[30px] carousel-scroll">
+            <li class="carousel-card !min-w-[520px] text-[22px] !shadow-none ml-[calc((100vw-1290px)/2)]">
+                <p class="leading-8.5">From the cloud to the office to the data center to the edge, NVIDIA provides solutions that deliver breakthrough performance on enterprise AI and HPC workloads at any scale, driving business decisions in real time and resulting in faster time to value.</p>
+                <div onclick="quickLinks2()"  class="flex mt-[30px] items-center cursor-pointer">
+                    <span class="inline-block rotate-90 text-[#76b900]">&#10095;</span>
+                    <span id="quickLinksButton2" class="font-bold text-sm ml-4">Quick Links</span>
+                </div>
+                <div id="quickLinksClicked2" class="flex flex-wrap text-[14px] mt-[30px] h-[150px] hidden">
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Overview</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Data Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Mahchine Learning</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Predictice Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Recommender Systems</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Speech AI</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Apache Spark</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Quick Links</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">RAPIDS</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                </div>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Partner to Build Semi-Custom AI Infrastructure</p>
+                        <p class="text-[16px] pb-[30px]">NVIDIA NVLink™ Fusion will accelerate deployment of AWS Trainium4 AI chips.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t5.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t4.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Expand Full-Stack Partnership</p>
+                        <p class="text-[16px] pb-[30px]">AWS AI factories, powered by NVIDIA, will accelerate global AI adoption.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t3.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t2.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card !mr-[calc((100vw-1290px)/2)]">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- <div class="w-[1290px] h-1 bg-[#000000]"></div> -->
+    </div>
+
+    <!-- Second Carousel Below -->
+
+    <div id="more-details-containers" class="mx-auto mt-20 bg-white">
+        <div class="flex justify-between min-[1290px]:mx-[calc((100vw-1290px)/2)]">
+            <span class="font-bold text-3xl">Artificial Intelligence</span>
+            <div class="mb-2">
+                <button onclick="scrollSlideLeft('carousel-cards-container-2')">
+                    <span class="chevron-top-container ml-0 cursor-pointer">
+                        &#10094;
+                    </span>
+                </button>
+                <button onclick="scrollSlideRight('carousel-cards-container-2')">
+                    <span class="chevron-top-container cursor-pointer">
+                        &#10095;
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Cards Container Below -->
+
+        <ul id="carousel-cards-container-2" class="flex py-[30px] carousel-scroll">
+            <li class="carousel-card !min-w-[520px] text-[22px] !shadow-none ml-[calc((100vw-1290px)/2)]">
+                <p class="leading-8.5">AI is powering change in every industry. From generative AI and speech recognition to medical imaging and improved supply chain management, AI is providing enterprises that compute power, tools, and algorithms their teams need to do their life's work.</p>
+                <div onclick="quickLinks()" class="mt-[30px] cursor-pointer">
+                    <span class="inline-block rotate-90 text-[#76b900]">&#10095;</span>
+                    <span id="quickLinksButton" class="font-bold text-sm ml-2">Quick Links</span>
+                </div>
+                <div id="quickLinksClicked" class="flex flex-wrap text-[14px] mt-[30px] h-[150px] hidden">
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Overview</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Data Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Mahchine Learning</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Predictice Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Recommender Systems</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Speech AI</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Apache Spark</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Quick Links</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">RAPIDS</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                </div>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Agentic AI | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Making Nemotron 3 Efficient and Accurate for Agentic Tasks</p>
+                        <p class="text-[16px] pb-[30px]">See what’s new in NVIDIA Nemotron 3 and the innovations that make these models highly performant.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t5.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Agentic AI | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA Unveils Nemotron 3 Family of Models for Agentic AI</p>
+                        <p class="text-[16px] pb-[30px]">The open, hybrid models deliver top efficiency and accuracy for complex, high-throughput applications.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t4.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Expand Full-Stack Partnership</p>
+                        <p class="text-[16px] pb-[30px]">AWS AI factories, powered by NVIDIA, will accelerate global AI adoption.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t3.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t2.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card !mr-[calc((100vw-1290px)/2)]">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Third Carousel Below -->
+
+    <div id="more-details-containers" class="mx-auto mt-20 bg-white">
+        <div class="flex justify-between min-[1290px]:mx-[calc((100vw-1290px)/2)]">
+            <span class="font-bold text-3xl">Design and Simulation</span>
+            <div class="mb-2">
+                <button onclick="scrollSlideLeft('carousel-cards-container-3')">
+                    <span class="chevron-top-container ml-0 cursor-pointer">
+                        &#10094;
+                    </span>
+                </button>
+                <button onclick="scrollSlideRight('carousel-cards-container-3')">
+                    <span class="chevron-top-container cursor-pointer">
+                        &#10095;
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Cards Container Below -->
+
+        <ul id="carousel-cards-container-3" class="flex py-[30px] carousel-scroll">
+            <li class="carousel-card !min-w-[520px] text-[22px] !shadow-none ml-[calc((100vw-1290px)/2)]">
+                <p class="leading-8.5">NVIDIA accelerated computing, libraries and AI models enable software makers and industry manufacturers to develop products for large-scale, physically accurate simulations and interactive digital twins so teams can efficiently build, train, and test advanced systems before deployment, bringing products to market faster.</p>
+                <div onclick="quickLinks3()" class="flex items-center mt-[30px] cursor-pointer">
+                    <span class="inline-block rotate-90 text-[#76b900]">&#10095;</span>
+                    <span class="font-bold text-sm ml-2">Quick Links</span>
+                </div>
+                <div id="quickLinksClicked3" class="flex flex-wrap text-[14px] mt-[30px] h-[150px] hidden">
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Overview</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Data Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Mahchine Learning</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Predictice Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Recommender Systems</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Speech AI</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Apache Spark</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Quick Links</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">RAPIDS</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                </div>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Partner to Build Semi-Custom AI Infrastructure</p>
+                        <p class="text-[16px] pb-[30px]">NVIDIA NVLink™ Fusion will accelerate deployment of AWS Trainium4 AI chips.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t5.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t4.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Expand Full-Stack Partnership</p>
+                        <p class="text-[16px] pb-[30px]">AWS AI factories, powered by NVIDIA, will accelerate global AI adoption.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t3.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t2.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card !mr-[calc((100vw-1290px)/2)]">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Fourth Carousel Below -->
+
+    <div id="more-details-containers" class="mx-auto mt-20 bg-white">
+        <div class="flex justify-between mx-[calc((100vw-1290px)/2)]">
+            <span class="font-bold text-3xl">About NVIDIA</span>
+            <div class="mb-2">
+                <button onclick="scrollSlideLeft('carousel-cards-container-4')">
+                    <span class="chevron-top-container ml-0 cursor-pointer">
+                        &#10094;
+                    </span>
+                </button>
+                <button onclick="scrollSlideRight('carousel-cards-container-4')">
+                    <span class="chevron-top-container cursor-pointer">
+                        &#10095;
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Cards Container Below -->
+
+        <ul id="carousel-cards-container-4" class="flex py-[30px] carousel-scroll">
+            <li class="carousel-card !min-w-[520px] text-[22px] !shadow-none ml-[calc((100vw-1290px)/2)]">
+                <p class="leading-8.5">NVIDIA pioneered accelerated computing to tackle challenges no one else can solve. Our work in AI and digital twins is transforming the world's largest industries and profoundly impacting society.</p>
+                <div onclick="quickLinks4()" class="flex items-center mt-[30px] cursor-pointer">
+                    <span class="inline-block rotate-90 text-[#76b900]">&#10095;</span>
+                    <span class="font-bold text-sm ml-2">Quick Links</span>
+                </div>
+                <div id="quickLinksClicked4" class="flex flex-wrap text-[14px] mt-[30px] h-[150px] hidden">
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Overview</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Data Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Mahchine Learning</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Predictice Analytics</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Recommender Systems</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Speech AI</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Apache Spark</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">Quick Links</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                    <a href="/" class="mr-8">
+                        <span class="font-bold text-sm">RAPIDS</span>
+                        <span class="inline-block text-[#76b900]">&#10095;</span>
+                    </a>
+                </div>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Partner to Build Semi-Custom AI Infrastructure</p>
+                        <p class="text-[16px] pb-[30px]">NVIDIA NVLink™ Fusion will accelerate deployment of AWS Trainium4 AI chips.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t5.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t4.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Announcement</span>
+                        <p class="text-[20px] font-bold my-[30px]">NVIDIA and AWS Expand Full-Stack Partnership</p>
+                        <p class="text-[16px] pb-[30px]">AWS AI factories, powered by NVIDIA, will accelerate global AI adoption.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t3.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t2.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+            <li class="carousel-card !mr-[calc((100vw-1290px)/2)]">
+                <a href="">
+                    <img src="../image/homepagepic/t6.jpg" alt="" class="w-[410px] h-[230px]">
+                    <div class="px-5 mt-[30px]">
+                        <span class="font-bold text-[15px]">Data Center | Blog</span>
+                        <p class="text-[20px] font-bold my-[30px]">Model Makers Use NVIDIA for the Next Generation of Intelligence</p>
+                        <p class="text-[16px] pb-[30px]">From GPT‑5.2 to the latest multimodal models, innovators train faster at scale with NVIDIA Blackwell.</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="w-full h-15 mx-auto"></div>
+    </div>
+
+    <!-- Footer Container Below -->
+
+    <footer id="brand-footer" class="w-full mx-auto h-[580px] bg-black py-[60px] px-[30px]">
+        <div class="flex max-w-[1290px] mx-auto">
+            <div class="pr-5">
+                <div>
+                    <p class="font-bold text-2xl text-white pb-3">Company Information</p>
+                    <div class="h-0.25 w-100 bg-[#FFF] opacity-50"></div>
+                </div>
+                <ul class="mt-2.5 mb-[50px] w-[400px] h-[310px]">
+                    <li class="brand-footer mt-4"><a href="">About Us</a></li>
+                    <li class="brand-footer"><a href="">Company Overview</a></li>
+                    <li class="brand-footer"><a href="">Investors</a></li>
+                    <li class="brand-footer"><a href="">Venture Captial (NVentures)</a></li>
+                    <li class="brand-footer"><a href="">NVIDIA Foundation</a></li>
+                    <li class="brand-footer"><a href="">Research</a></li>
+                    <li class="brand-footer"><a href="">Corporate Sustainability</a></li>
+                    <li class="brand-footer"><a href="">Technologies</a></li>
+                    <li class="brand-footer"><a href="">Careers</a></li>
+                </ul>
+            </div>
+            <!-- Second-Brand-Footer Container Below -->
+            <div class="px-2.5">
+                <div>
+                    <p class="font-bold text-2xl text-white pb-3">News and Events</p>
+                    <div class="h-0.25 w-100 bg-[#FFF] opacity-50"></div>
+                </div>
+                <ul class="mt-2.5 mb-[50px] w-[400px] h-[310px]">
+                    <li class="brand-footer mt-4"><a href="">Newsroom</a></li>
+                    <li class="brand-footer"><a href="">Company Blog</a></li>
+                    <li class="brand-footer"><a href="">Technical Blog</a></li>
+                    <li class="brand-footer"><a href="">Webinars</a></li>
+                    <li class="brand-footer"><a href="">Stay Informed</a></li>
+                    <li class="brand-footer"><a href="">Events Calender</a></li>
+                    <li class="brand-footer"><a href="">GTC AI Conference</a></li>
+                    <li class="brand-footer"><a href="">NVIDIA On-Demand</a></li>
+                </ul>
+            </div>
+            <!-- Third-Brand-Footer Container Below -->
+            <div class="pl-5">
+                <div>
+                    <p class="font-bold text-2xl text-white pb-3">Popular Links</p>
+                    <div class="h-0.25 w-100 bg-[#FFF] opacity-50"></div>
+                </div>
+                <ul class="mt-2.5 mb-[50px] w-[400px] h-[310px]">
+                    <li class="brand-footer mt-4"><a href="">Developers</a></li>
+                    <li class="brand-footer"><a href="">Partners</a></li>
+                    <li class="brand-footer"><a href="">Executive Insights</a></li>
+                    <li class="brand-footer"><a href="">Startups and VCs</a></li>
+                    <li class="brand-footer"><a href="">NVIDIA Connection ISVs</a></li>
+                    <li class="brand-footer"><a href="">Documentation</a></li>
+                    <li class="brand-footer"><a href="">Technical Training</a></li>
+                    <li class="brand-footer"><a href="">Professional Services for Data Science</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1290px] mx-auto flex justify-between items-center">
+            <div class=" flex items-center h-[50px]">
+                <img src="../image/homepagepic/email.png" alt="" class="w-12 h-9 object-cover">
+                <span class="text-white text-[18px] mx-[30px] h-[18px]">Sign Up for NVIDIA News</span>
+                <span class="font-bold py-[13px] px-[15px] bg-[#79b900]">Subscribe</span>
+            </div>
+            <div class="flex items-center">
+                <p class="text-[16px] opacity-50 text-white mr-2">Follow NVIDIA</p>
+                <img src="../image/homepagepic/facebook_logo.png" alt="" class="social-media-footer">
+                <img src="../image/homepagepic/ig_logo.png" alt="" class="social-media-footer">
+                <img src="../image/homepagepic/linkedin_logo.png" alt="" class="social-media-footer">
+                <img src="../image/homepagepic/twitter_logo.png" alt="" class="social-media-footer">
+                <img src="../image/homepagepic/youtube_logo.png" alt="" class="social-media-footer mr-0">
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Copyright Container Below -->
+
+    <footer class="bg-white h-[140px]">
+        <div class="max-w-[1290px] mx-auto py-[30px]">
+            <img src="../image/homepagepic/nvdhori.png" alt="" class="grayscale brightness-0 w-[110px] h-5 object-cover mb-5 -ml-2.25">
+            <ul class="flex">
+                <li class="copyright-footer"><a href="">Privacy Police</a></li><span class="mx-1.5">|</span>
+                <li class="copyright-footer"><a href="">Your Privacy Choices</a></li><span class="mx-1.5">|</span>
+                <li class="copyright-footer"><a href="">Terms of Service</a></li><span class="mx-1.5">|</span>
+                <li class="copyright-footer"><a href="">Accessibility</a></li><span class="mx-1.5">|</span>
+                <li class="copyright-footer"><a href="">Corporate Policies</a></li><span class="mx-1.5">|</span>
+                <li class="copyright-footer"><a href="">Product Security</a></li><span class="mx-1.5">|</span>
+                <li class="copyright-footer"><a href="">Contact</a></li>
+            </ul>
+            <p class="text-[#666666] text-[12px]">Copyright © 2025 NVIDIA Corporation</p>
+        </div>
+    </footer>
+
+    <script src="../dist/script.js"></script>
+    <script src="../dist/runSequence.js"></script>
+</body>
+</html>  

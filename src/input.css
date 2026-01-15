@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@plugin "tailwind-scrollbar";
+
+@layer components {
+  .icon-nav-right {
+    @apply w-6 h-6;
+  }
+
+  .nav-left {
+    @apply px-2 py-2.5;
+  }
+
+  .nav-right {
+    @apply px-2 py-2.5;
+  }
+
+  .homepage-card-container {
+    @apply w-[190px] text-[14px] cursor-pointer;
+  }
+
+  .chevron-top-container {
+    @apply text-black bg-[#76b900] ml-3 mb-2.5 p-2.5 text-lg;
+  }
+
+  .teaser-card {
+    @apply w-[330px] h-[292x] pt-[32px] pr-[30px] max-w-none;
+  }
+
+  .img-teaser {
+    @apply min-w-[300px] h-[170px] object-cover;
+  }
+
+  .carousel-card {
+    @apply min-w-[410px] h-[500px] mr-5 shadow-[0_0_7px_rgba(0,0,0,0.2)] hover:shadow-[0_0_10px_rgba(0,0,0,0.5)] transition duration-600 ease-in-out;
+  }
+
+  .brand-footer {
+    @apply text-[#79b900] text-[16px] w-[380px] h-[30px] mr-5 mb-1.25;
+  }
+
+  .social-media-footer {
+    @apply w-6 h-fit object-cover mr-2;
+  }
+
+  .copyright-footer {
+    @apply text-[16px] opacity-50 hover:opacity-100;
+  }
+
+  .carousel-scroll {
+    @apply overflow-x-scroll [&::-webkit-scrollbar]:h-[5px] [&::-webkit-scrollbar-button]:hidden min-[1290px]:[&::-webkit-scrollbar-track]:mx-[calc((100vw-1290px)/2)]
+        [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-[#76b900] [&::-webkit-scrollbar-thumb:hover]:bg-green-700; 
+  }
+
+  .underline-login {
+    @apply text-[#616161] underline decoration-2 decoration-[#76b900] underline-offset-4 hover:decoration-black duration-200;
+  }
+
+  .slide-right{
+    @apply transition-transform duration-200 group-hover:translate-x-1.5;
+  }
+
+  .passwordStyle{
+    @apply w-6 h-6 bg-transparent absolute right-[10px] top-[8px] cursor-pointer;
+  }
+}

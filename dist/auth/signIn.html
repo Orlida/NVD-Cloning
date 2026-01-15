@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+    <style>
+        /* @keyframes slide-right{
+            from{
+                transform: translateX(0px);
+            }
+            to{
+                transform: translateX(6px);
+                background-color: black;
+            }
+        }
+
+        .slide-right-animation{
+            animation: slide-right 100ms linear forwards;
+        } */
+    </style>
+</head>
+<body>
+    <div class="w-full bg-white m-auto">
+        <nav class="flex h-[45] justify-between max-w-[1290px] ml-[calc((100vw-1290px)/2)]">
+            <div class="flex">
+                <div class="flex items-center w-[135px] h-[44px]">
+                    <a href="/dist/index.html">
+                        <img src="/image/NVIDIA-Logo.a93d603be4f37946.svg" alt="" class="w-[110px] h-[44px]">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="flex items-center h-[66px] bg-black">
+        <p class="text-white font-bold text-[28px] mx-[calc((100vw-1290px)/2)]">NVIDIA Account Portal</p>
+    </div>
+
+    <!-- Log-in section -->
+
+    <section class="bg-[#fafafa] pt-8.5">
+        <div class="mx-auto bg-white w-[648px] h-[900px] py-4">
+            <div class="mx-auto text-center max-w-[424px] h-[33px] mt-8">
+                <span class="text-[#424242] text-[24px]">Your NVIDIA Account</span>
+            </div>
+            <div id="logIn" class="w-[406px] mx-auto">
+                <p class="pt-10 pb-14 text-center">Enter your email to log in or create an account.</p>
+                <label for="email" class="text-[12px] font-bold">Email</label>
+                <input type="email" id="email" placeholder="Enter your email address" class="border-1 block w-full py-[6.5px] px-2 focus:border-[#76b900] outline-none">
+                <span id="validErrMsg" class="text-red-600 font-light text-[12px] hidden">Enter a valid email address</span>
+                <span id="enterEmailMsg" class="text-red-600 font-light text-[12px] hidden">Enter your email address</span>
+                <label class="group flex mt-7">
+                    <input type="checkbox" class="sr-only">
+                    <div class="w-5 h-5 flex justify-center items-center border-1">
+                        <img src="/image/check.png" alt="" class="w-5 h-5 bg-transparent">
+                    </div>
+                    <span class="text-[#00000099] text-[14px] ml-2">Stay logged in</span>
+                </label>
+                <div class="mx-auto">
+                    <button class="w-full mt-7 p-3">
+                        <span id="continueBtn" class="font-bold p-3 bg-[#e0e0e0] text-[14px] text-[#999999]">Continue</span>
+                    </button>
+                </div>
+                <div class="h-[1px] w-full bg-[#999999] mt-10 relative">
+                    <span class="absolute px-3 bg-white text-[#767676] left-1/2 top-[-9.5px] translate-x-[-50%] text-[12px]">or</span>
+                </div>
+            </div>
+            <ul class="w-[406px] mx-auto mt-4 text-[14px] font-medium">
+                <li class="border-1 h-10 mb-3 hover:bg-black/5 duration-200 linear">
+                    <a href="" class="flex justify-center items-center">
+                        <img src="/image/homepagepic/google.png" alt="" class="w-4 h-4 m-3">
+                        <span>Log In With Google</span>
+                    </a>
+                </li>
+                <li class="border-1 h-10 mb-3 hover:bg-black/5 duration-200 linear">
+                    <a href="" class="flex justify-center items-center">
+                        <img src="/image/homepagepic/discord.png" alt="" class="w-5 h-5 m-2.5">
+                        <span>Log In With Discord</span>
+                    </a>
+                </li>
+                <li class="border-1 h-10 mb-3 hover:bg-black/5 duration-200 linear">
+                    <a href="" class="flex justify-center items-center">
+                        <img src="/image/homepagepic/apple.png" alt="" class="w-5 h-5 m-2.5">
+                        <span>Log In With Apple</span>
+                    </a>
+                </li>
+                <li class="border-1 h-10 hover:bg-black/5 duration-200 linear">
+                    <a href="" class="flex justify-center items-center">
+                        <img src="/image/homepagepic/facebook.png" alt="" class="w-5 h-5 m-2.5">
+                        <span>Log In With Facebook</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center mt-10">
+                <a href="">
+                    <span class="font-bold border-2 border-[#76b900] px-[11.25px] py-[9.5px] hover:border-black duration-100 linear">Show More</span>
+                </a>
+            </div>
+            <div class="text-center mt-5 w-[406px] mx-auto">
+                <span class="text-[14px]">
+                    By proceeding, I agree to the 
+                    <a href="" class="underline-login linear">NVIDIA Account Terms of Use</a> 
+                    and 
+                    <a href="" class="underline-login linear">Privacy Policy</a>
+                </span>
+            </div>
+            <div class="text-center mt-5 w-[406px] mx-auto">
+                <a href="" class="group inline-flex text-center">
+                    <div class="flex items-center justify-center">
+
+                        <span class="font-bold">Log in with security device </span>
+                        <span class="inline-block text-[#76b900] ml-2 slide-right group-hover:text-black">&#10095;</span>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center mt-12 w-[406px] mx-auto">
+                <a href="" class="group inline-flex text-center">
+                    <div class="flex items-center justify-center">
+                        <span class="font-bold text-[14px]">Login Help</span>
+                        <span class="inline-block text-[#76b900] ml-2 slide-right group-hover:text-black">&#10095;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[#fafafa] w-full h-[100px] mx-auto">
+        <div class="max-w-[1290px] mx-auto pt-4 pb-8">
+            <ul class="flex justify-between">
+                <div class="flex">
+                    <li class="copyright-footer"><a href="">Privacy Police</a></li><span class="mx-1.5">|</span>
+                    <li class="copyright-footer"><a href="">Legal Info</a></li><span class="mx-1.5">|</span>
+                    <li class="copyright-footer"><a href="">Contact Us</a></li>
+                </div>
+                <div class="cursor-pointer font-light">
+                    English (US) <span class="inline-block text-[#616161] ml-3 rotate-90">&#10095;</span>
+                </div>
+            </ul>
+            <p class="mt-2 text-[12px] font-light text-black/60">Copyright © 2026 NVIDIA Corporation</p>
+        </div>
+    </footer>
+    <script src="/dist/script.js"></script>
+</body>
+</html>

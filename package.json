@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.1",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7",
+    "router": "^2.2.0",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "^4.1.18"
+  },
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "start": "node server.js"
+  }
+}
