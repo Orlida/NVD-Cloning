@@ -96,20 +96,8 @@ if(signInBtn){
     })
 }
 
-//LocalStorage emailValue.value after we click 'Continue' Button
-
 const continueBtn = document.getElementById("continueBtn");
 const emailValue = document.getElementById("email");
-
-
-continueBtn.addEventListener('click', () =>{
-
-    localStorage.setItem('input', emailValue.value)
-    if(window.location.href === "register.html"){
-        emailValue.value = localStorage.getItem('input');
-    }
-})
-
 
 //Email validation
 
@@ -150,17 +138,19 @@ function enterValidEmail(){
     continueBtn.classList.add("bg-[#e0e0e0]", "text-[#999999]");
 }
 
-emailValue.addEventListener('input', (e) => {
-    if(regEx.test(e.target.value)){
-        validContinueBtn();
-    }else{
-        if(e.target.value == ""){
-            enterYourEmail();
+if(emailValue){
+    emailValue.addEventListener('input', (e) => {
+        if(regEx.test(e.target.value)){
+            validContinueBtn();
         }else{
-            enterValidEmail();
+            if(e.target.value == ""){
+                enterYourEmail();
+            }else{
+                enterValidEmail();
+            }
         }
-    }
-})
+    })
+}
 
 emailValue.addEventListener("blur", (e) => {
     if(e.target.value == ""){
@@ -176,78 +166,27 @@ emailValue.addEventListener("blur", (e) => {
 //Check whether that there is user in storage.
 
 const checkUser = async () => {
-    const response = await fetch("http://localhost:5000/test", {
+    const response = await fetch("http://localhost:5000/checkUser", {
         method: 'POST',
         headers: {'Content-Type' : 'application/json' },
         body: JSON.stringify({ email: emailValue.value })
     });
 
-    const data = await response.json();
+    const data = await response.json(); 
 
-    console.log("Is email exists?:", data.exists);
+    console.log("Is email exists?:", data.emailExists);
 
-    if(data.exists){
+    if(data.emailExists){
         window.location.href = 'login.html';
     }else{
         window.location.href = 'register.html';
     }
 }
 
-continueBtn.addEventListener('click', (e) => {
+continueBtn.addEventListener('click', async (e) => {
     e.preventDefault();
-    checkUser();
+    localStorage.setItem('input', emailValue.value)
+    await checkUser();
 })
 
-//invisible-visible eye function is below
 
-const invisible = document.querySelectorAll("#invisible");
-const visible = document.querySelectorAll("#visible");
-const password = document.querySelectorAll('#confirmPassword');
-
-function closedOpenEye(id){
-    
-    const closedEye = invisible[id];
-    const openEye = visible[id];
-    const currentPasswordInput = password[id];
-
-    closedEye.classList.toggle("hidden");
-    openEye.classList.toggle("hidden");
-    if(currentPasswordInput.type === 'password'){
-        currentPasswordInput.type = 'text';
-    }else if(currentPasswordInput.type === 'text'){
-        currentPasswordInput.type = 'password';
-    }
-}
-
-//Stay logged in box function is below
-
-
-const checkBox = document.getElementById("checkBox");
-const boxCheckBox = document.getElementById("boxCheckBox");
-const shadowCircle = document.getElementById("shadowCircle");
-
-checkBox.addEventListener('click', (e) => {
-
-    e.preventDefault();
-    const checkLogIn = document.getElementById("checkLogIn");
-    checkLogIn.classList.toggle("hidden");
-
-    //Style changing
-
-    if(checkLogIn.classList.contains("hidden")){
-        shadowCircle.classList.remove("bg-[#76b900]/20");
-        shadowCircle.classList.remove("hover:bg-[#76b900]/10", "active:bg-[#76b900]/20");
-        boxCheckBox.classList.remove("bg-[#76b900]");
-        shadowCircle.classList.add("hover:bg-black/10", "active:bg-black/20");
-    }else{
-        shadowCircle.classList.remove("hover:bg-black/10", "active:bg-black/20");
-        shadowCircle.classList.add("bg-[#76b900]/20");
-        shadowCircle.classList.add("hover:bg-[#76b900]/10", "active:bg-[#76b900]/20");
-        boxCheckBox.classList.add("bg-[#76b900]");
-    }
-
-})
-
-checkBox.addEventListener('blur', () => {
-    shadowCircle.classList.remove("bg-[#76b900]/20");    
-});
